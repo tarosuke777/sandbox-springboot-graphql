@@ -4,7 +4,7 @@ extend type Query {
 
 type Hero {
   name: String
-  friends: [Friend]
+  friends(limit: Int): [Friend]
 }
 
 type Friend {
