@@ -4,4 +4,9 @@ extend type Query {
 
 type Hero {
   name: String
+  friends: [Friend]
+}
+
+type Friend {
+  name: String
 }
