@@ -4,6 +4,7 @@ extend type Query {
 
 extend type Mutation {
   addHero(name: String): Hero
+  updateHero(id: String, name: String): Hero
 }
 
 type Hero {

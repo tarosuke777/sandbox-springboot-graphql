@@ -13,13 +13,19 @@ import org.springframework.stereotype.Controller;
 public class HeroController {
     @QueryMapping
     public Hero hero() {
-        return new Hero("Superman");
+        return new Hero("1", "Superman");
     }
 
     @MutationMapping
     public Hero addHero(@Argument String name) {
-        return new Hero(name);
+        return new Hero("1", name);
     }
+
+    @MutationMapping
+    public Hero updateHero(@Argument String id, @Argument String name) {
+        return new Hero(id, name);
+    }
+
 
     // @SchemaMapping
     // public Friend[] friends(Hero hero) {
