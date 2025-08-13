@@ -2,6 +2,10 @@ extend type Query {
   hero: Hero
 }
 
+extend type Mutation {
+  addHero(name: String): Hero
+}
+
 type Hero {
   name: String
   friends(limit: Int): [Friend]

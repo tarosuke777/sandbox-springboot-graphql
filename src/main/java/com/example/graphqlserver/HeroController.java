@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,11 @@ public class HeroController {
     @QueryMapping
     public Hero hero() {
         return new Hero("Superman");
+    }
+
+    @MutationMapping
+    public Hero addHero(@Argument String name) {
+        return new Hero(name);
     }
 
     // @SchemaMapping
@@ -33,4 +39,6 @@ public class HeroController {
 
         return allFriends.stream().limit(limit).collect(Collectors.toList());
     }
+
+
 }
